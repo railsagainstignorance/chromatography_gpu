@@ -12,7 +12,29 @@
   }
 }(this, function () {
   // chromatography stuff
+  function createPaper( config ) {
+    ['gpu', 'canvasWrapper', 'queryString'].forEach( field => {
+      if (! config.hasOwnProperty(field)) {
+        throw `ERROR: createPaper: requires field=${field}`;
+      }
+    });
+
+    const           gpu = config.gpu;
+    const canvasWrapper = config.canvasWrapper;
+    const   queryString = config.queryString;
+
+    function iteratePaper() {
+      console.log(`DEBUG: in iteratePaper`);
+    }
+
+    return {
+      iterate : iteratePaper
+    }
+  }
+
+
   return {
     // public methods
+    createPaper
   };
 }));

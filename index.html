@@ -40,7 +40,9 @@
 <body>
   <h1>Chromatography (using the GPU)</h1>
 
+  <div id="myCanvasWrapper">
     <canvas class="blotting-paper" id="myCanvas" width="100" height="100"></canvas>
+  </div>
 
   <div class="remove" id="configparams">
     <h2>Config Params</h2>
@@ -52,10 +54,15 @@
 
   <script>
   (function(){
-    function temp(){
-      console.log('Ready to go');
+    function delayedStart(){
+      var paper = Chromatography.createPaper( {
+                  gpu : new GPU(),
+        canvasWrapper : document.getElementById('myCanvasWrapper'),
+          queryString : location.search
+      });
+      paper.iterate();
     }
-    window.setTimeout(temp, 100);
+    window.setTimeout(delayedStart, 100);
   })();
   </script>
 </body>
