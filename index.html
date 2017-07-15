@@ -8,7 +8,7 @@
   html {
     font-family: sans-serif;
   }
-  .blotting-paper {
+  .blotting-paper > canvas {
     border-width: 1px;
     border-color: lightgrey;
     border-style: solid;
@@ -16,8 +16,7 @@
     box-shadow: 10px 10px 5px #888888;
 
     background-color: white;
-  }
-  #myCanvas { // make them canvas pixels bigger. Assuming the canvas is 100x100, the pixels become 4x4
+    // make them canvas pixels bigger. Assuming the canvas is 100x100, the pixels become 4x4
     width: 400px;
     height: 400px;
   }
@@ -40,9 +39,7 @@
 <body>
   <h1>Chromatography (using the GPU)</h1>
 
-  <div id="myCanvasWrapper">
-    <canvas class="blotting-paper" id="myCanvas" width="100" height="100"></canvas>
-  </div>
+  <div id="myCanvasWrapper" class="blotting-paper"><canvas id="myCanvas" width="100" height="100"></canvas></div>
 
   <div class="remove" id="configparams">
     <h2>Config Params</h2>
@@ -56,9 +53,9 @@
   (function(){
     function delayedStart(){
       var paper = Chromatography.createPaper( {
-                  gpu : new GPU(),
+        gpu           : new GPU(),
         canvasWrapper : document.getElementById('myCanvasWrapper'),
-          queryString : location.search
+        queryString   : location.search
       });
       paper.iterate();
     }

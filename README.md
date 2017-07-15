@@ -16,3 +16,14 @@ Gotchas:
 
 * get started with gpu.js
 * build basic cellular automata
+
+### problems
+
+* golGpuUpdate = gpu.createKernel(...) is not working
+   * should flip cell states
+* nor is golGpuRender = gpu.createKernel
+   * should display cell states
+
+## Notes
+
+* [gpu.js repo](https://github.com/gpujs/gpu.js)
