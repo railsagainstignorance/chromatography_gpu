@@ -1,6 +1,10 @@
 # Chromatography (using GPU)
 
-bringing together https://github.com/railsagainstignorance/chromatography and gpu.js (via http://gpu.rocks)
+[Live link](https://railsagainstignorance.github.io/chromatography_gpu/)
+
+_Very much under construction, and rather broken just now_
+
+Bringing together https://github.com/railsagainstignorance/chromatography and gpu.js (via http://gpu.rocks)
 
 with the intention of having fast, hi-res, sort-of-realistic, wet-ink-in-blotting-paper physics in one's browser.
 
